@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Firebase\WorkerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/worker', function (){
-    return view('worker.index');
-});
+Route::get('worker',[\App\Http\Controllers\Firebase\WorkerController::class,'index'])->middleware('auth');
+Route::post('add-worker',[\App\Http\Controllers\Firebase\WorkerController::class,'store'])->middleware('auth');;

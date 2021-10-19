@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @notifyCss
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -81,6 +82,8 @@
             @yield('content')
         </main>
     </div>
+    @notifyJs
+    <x:notify-messages />
     @stack('script')
     <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js"></script>
