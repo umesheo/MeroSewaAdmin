@@ -26,7 +26,7 @@
         }
         @keyframes typewriter{
             from{width: 0;}
-            to{width: 25em;}
+            to{width: 27em;}
         }
         @keyframes blinkTextCursor{
             from{border-right-color: rgba(255,255,255,.75);}
@@ -38,7 +38,11 @@
 
             justify-content: center;
         }
+        label{
+            background-color: transparent;
+        }
     </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -52,7 +56,8 @@
                     <div class="container1">
 
                     <div class="col-sm-6">
-                        <img src="/images/LoginArt.png" style="width: 100%; height: 290px;" alt="Girl in a jacket">
+{{--                        <img src="/images/LoginArt.png" style="width: 90%; height: 270px;" alt="Girl in a jacket">--}}
+                        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_rw0hvilj.json"  background="transparent"  speed="1"  style=" margin-left:40px;width: 290px; height: 280px;"  loop  autoplay></lottie-player>
                     </div>
                     </div>
                     <form method="POST" action="{{ route('login') }}">

@@ -38,7 +38,11 @@
 
             justify-content: center;
         }
+        label{
+            background-color: transparent;
+        }
     </style>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -52,7 +56,8 @@
                     <div class="container1">
 
                         <div class="col-sm-6">
-                            <img src="/images/RegisterArt.png" style="width: 290px; height: 230px; margin: auto;" alt="Girl in a jacket">
+{{--                            <img src="/images/RegisterArt.png" style="width: 290px; height: 230px; margin: auto;" alt="Girl in a jacket">--}}
+                            <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jcikwtux.json"  background="transparent"  speed="1"  style="margin-left:40px;width: 250px; height: 230px;"  loop  autoplay></lottie-player>
                         </div>
                     </div>
                     <form method="POST" action="{{ route('register') }}">

@@ -1,225 +1,232 @@
 <style>
-    body{
-        background-image: url({{url('images/background.png')}})
+    body {
+        background-image: url({{url('images/background1.png')}})
     }
 
-    .styled-table {
-        border-collapse: collapse;
-
-        font-size: 0.9em;
-        font-family: sans-serif;
-        min-width: 400px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-        position: center;
-        margin: 20px auto;
-    }
-    .styled-table thead tr {
-        background-color: #00BDFE;
-        color: #ffffff;
-        text-align: left;
-    }
-    .styled-table th,
-    .styled-table td {
-        padding: 12px 15px;
-    }
-    .styled-table tbody tr {
-        border-bottom: 1px solid #dddddd;
-    }
-
-    .styled-table tbody tr:nth-of-type(even) {
-        background-color: #f3f3f3;
-    }
-
-    .styled-table tbody tr:last-of-type {
-        border-bottom: 2px solid #00BDFE;
-    }
-    .styled-table tbody tr.active-row {
-        font-weight: bold;
-        color: #009879;
-    }
-    .css-button-rounded {
-        background:	#00A36C;
-        color: #fff;
-        display: block;
-        padding: 10px 5px;
+    .count{
+        width: 200px;
+        height: 100px;
+        border-radius: 20px;
+        margin-top: 1px;
+        margin-left: 5px;
+        margin-bottom: 10px;
         text-align: center;
-        text-decoration: none;
-        width: 100px;
-        margin-bottom: 10px;
-        border-radius: 20px; // the rounded corners are here
+        padding-top: 6px;
+        background-color: #1b1e21;
+        color: white;
+        border-left: 10px solid #007FFF;
+
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
     }
-    .form-style-5{
-        max-width: 500px;
-        padding: 10px 20px;
-        background: #f4f7f8;
-        margin: 10px auto;
-        padding: 20px;
-        background: #f4f7f8;
-        border-radius: 8px;
-        font-family: Georgia, "Times New Roman", Times, serif;
-    }
-    .form-style-5 fieldset{
-        border: none;
-    }
-    .form-style-5 legend {
-        font-size: 1.4em;
-        margin-bottom: 10px;
-    }
-    .form-style-5 label {
-        display: block;
-        margin-bottom: 8px;
-    }
-    .form-style-5 input[type="text"],
-    .form-style-5 input[type="date"],
-    .form-style-5 input[type="datetime"],
-    .form-style-5 input[type="email"],
-    .form-style-5 input[type="number"],
-    .form-style-5 input[type="search"],
-    .form-style-5 input[type="time"],
-    .form-style-5 input[type="url"],
-    .form-style-5 textarea,
-    .form-style-5 select {
-        font-family: Georgia, "Times New Roman", Times, serif;
-        background: rgba(255,255,255,.1);
-        border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        margin: 0;
-        outline: 0;
-        padding: 7px;
-        width: 100%;
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
+    label {
+
         background-color: #e8eeef;
-        color:#8a97a0;
-        -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-        box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-        margin-bottom: 30px;
+        color: black;
+        padding: 0.5rem;
+        font-family: Georgia, "Times New Roman", Times, serif;
+        border-radius: 0.3rem;
+        cursor: pointer;
 
     }
-    .form-style-5 input[type="text"]:focus,
-    .form-style-5 input[type="date"]:focus,
-    .form-style-5 input[type="datetime"]:focus,
-    .form-style-5 input[type="email"]:focus,
-    .form-style-5 input[type="number"]:focus,
-    .form-style-5 input[type="search"]:focus,
-    .form-style-5 input[type="time"]:focus,
-    .form-style-5 input[type="url"]:focus,
-    .form-style-5 textarea:focus,
-    .form-style-5 select:focus{
-        background: #d2d9dd;
+
+    input[type=file] {
+
+
     }
-    .form-style-5 select{
-        -webkit-appearance: menulist-button;
-        height:35px;
+
+    ::-webkit-file-upload-button {
+        display: none;
     }
-    .form-style-5 .number {
-        background: #1abc9c;
-        color: #fff;
-        height: 30px;
-        width: 30px;
-        display: inline-block;
-        font-size: 0.8em;
-        margin-right: 4px;
-        line-height: 30px;
+
+
+    .searchBox {
+     position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #2f3640;
+        height: 40px;
+        border-radius: 40px;
+
+    }
+    .searchBox:hover > .searchButton{
+        width: 240px;
+        padding: 0 6px;
+    }
+    .searchBox:hover > .search-btn{
+       background: white;
+    }
+    .searchButton{
         text-align: center;
-        text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-        border-radius: 15px 15px 15px 0px;
+        border: none;
+        background: none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: white;
+        font-size:16px ;
+        transition: 0.4s;
+        line-height: 40px;
+        width: 0px;
+    }
+    .search-btn{
+        color: #007FFF;
+        float: left;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #2f3640;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s;
+
+
     }
 
-    .form-style-5 input[type="submit"],
-    .form-style-5 input[type="button"]
-    {
-        position: relative;
-        display: block;
-        padding: 5px 5px 5px 5px;
-        color: #FFF;
-        margin: 0 auto;
-        background: #1abc9c;
-        font-size: 18px;
-        text-align: center;
-        font-style: normal;
-        width: 30%;
-        border: 1px solid #16a085;
-        border-radius: 35px;
-
-    }
-    .form-style-5 input[type="submit"]:hover,
-    .form-style-5 input[type="button"]:hover
-    {
-        background: #109177;
-    }
 </style>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 @extends('layouts.app')
-
 @section('content')
-
-    <div class="container">
+    <div class="container" >
         <div class="row justify-content-center">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card" style="padding-top: 1px; border-radius: 10px; box-shadow: rgba(26, 188, 156, 0.4) 5px 5px, rgba(26, 188, 156, 0.3) 10px 10px, rgba(26, 188, 156, 0.2) 15px 15px, rgba(26, 188, 156, 0.1) 20px 20px, rgba(26, 188, 156, 0.05) 25px 25px;">
                     <div class="card-header">{{ __('Workers Details') }}</div>
 
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
+                                {{ session::flash('status') }}
                             </div>
                         @endif
-                        <main class="mx-auto m-4">
+                        <main class="mx-0">
                             <div class="row">
-                                <div class="col-md-8">
-                                    <div class="card">
-                                        <div class="card-header bg-dark text-white">
-                                            <h4>Mero Sewa:Workers List</h4>
-                                        </div>
-                                        <div class="card-body">
-                                            <table class="styled-table">
-                                                <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone</th>
-                                                    <th>Address</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody class="workersdata">
+                                <div class="col-md-9">
 
-                                                <!-- and so on... -->
-                                                </tbody>
-                                            </table>
-
-                                        </div>
+                                    <div class="count" style="display: inline-block">
+                                        <i class="fa fa-id-badge fa-2x" style="display: inline-block; margin-top: 1px;"></i>
+                                        <h2 style="display: inline-block">{{$total_count}}</h2>
+                                        <p>Total Workers</p>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
+                                    <div class="lotte" style="display: inline-block">
+                                        <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9evakyqx.json"  background="transparent"  speed="1"  style="width: 200px; height: 70px;"  loop  autoplay></lottie-player>
+                                    </div>
+                                    <div class="card-header bg-dark text-white" style="border-radius: 20px;">
+                                        <div class="logo">
+                                            <div class="text">Mero Sewa:Workers List</div>
+                                            <div class="icon"><i class="fa fa-users fa-2x"
+                                                                 style="display: inline-block;"></i></div>
 
-                                    <div class="card">
-                                        <div class="card-header bg-dark text-white">
-                                            <h4>Add Workers</h4>
                                         </div>
-                                        <div class="card-body">
-                                            <div class="form-style-5">
-                                            <form action="{{url('add-worker')}}" method="POST" id="createWorkerForm">
+
+
+                                    </div>
+                                    <form class="form-group" id="search" style="margin-bottom: 70px;" autocomplete="off">
+                                        <div class="searchBox">
+                                        <input type="search"  name="search" id="" class="searchButton" value="{{$search}}" placeholder="Search for name,number">
+
+                                        <a class="search-btn" onclick="document.getElementById('search').submit();">
+                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                        </a>
+                                        </div>
+                                    </form>
+                                    <table class="styled-table" id="workertable">
+                                        <thead>
+                                        <tr>
+
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Image</th>
+                                            <th>PhoneNumber</th>
+                                            <th>Category</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="workersdata">
+                                        @php $i=1;
+                                        @endphp
+                                        @if(count($workers) <= 0)
+                                            <tr>
+                                                <td colspan="8">No Records Found</td>
+                                            </tr>
+                                        @else
+
+                                        @foreach($workers as $key => $item)
+
+                                            <tr>
+
+                                                <td>{{$item['Name']}}</td>
+                                                <td>{{$item['Address']}}</td>
+                                                <td><img src="{{$item['URL']}}"
+                                                         style="height: 48px; width: 50px;"></td>
+                                                <td>{{$item['PhoneNumber']}}</td>
+                                                <td>{{$item['Category']}}</td>
+                                                <td><a href="{{url('edit-worker/'.$key)}}"
+                                                       class="btn btn-sm btn-primary badge-pill" style="background-color: #3bb78f;
+background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);border-radius: 5px;"><i class="fa fa-edit fa-lg"
+                                                                                           style="padding-right: 5px;"></i>Edit</a>
+                                                </td>
+                                                <td><a href="{{url('delete-worker/'.$key)}}"
+                                                       class="btn btn-sm btn-danger badge-pill" style="background-color: #fc9842;
+background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);border-radius: 5px;"><i class="fa fa-trash fa-lg"
+                                                                                           style="padding-right: 5px;"></i>Delete</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        @endif
+                                        </tbody>
+                                    </table>
+                                    <div class="d-flex justify-content-center" style="margin-top: 5px;">
+                                        {{ $workers->links() }}
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col-md-3">
+
+
+                                    <div class="card-header bg-dark text-white" style="border-radius: 20px;">
+                                        <div class="logo">
+                                            <div class="text">Add Workers</div>
+                                            <div class="icon"><i class="fa fa-user-plus fa-2x"
+                                                                 style="display: inline-block;"></i></div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="form-style-5">
+                                            <form action="{{url('add-worker')}}" method="POST" id="createWorkerForm"
+                                                  enctype='multipart/form-data'>
                                                 @csrf
                                                 <fieldset>
                                                     <legend><span class="number">1</span> Worker Details</legend>
                                                     <input type="text" name="Name" placeholder="Name *">
-                                                    <input type="email" name="Email" placeholder="Email *">
+
                                                     <input type="text" name="Phone" placeholder="Phone Number*">
                                                     <input type="text" name="Address" placeholder="Address*">
                                                     <input type="text" name="Category" placeholder="Category*">
 
+                                                    <input type="file" id="upload" class="inputfile" name="image"
+                                                           accept="image/*">
+                                                    <label for="upload" style="text-align: center;"> <i
+                                                            class="fa fa-camera icon" style="margin-right: 5px;"></i>Choose
+                                                        image</label>
+
+
                                                 </fieldset>
 
-                                                <input type="submit" value="Submit" />
+
+                                                <input type="submit" value="Submit"/>
                                             </form>
 
                                         </div>
-                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         </main>
@@ -230,4 +237,5 @@
 
         </div>
 @endsection
+
 

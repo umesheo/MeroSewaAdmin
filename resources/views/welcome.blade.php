@@ -38,6 +38,7 @@
             }
 
         </style>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -60,7 +61,8 @@
                         <h1 style="color: white; font-size:50px; margin-top: 0px;padding-top: 0px;">Admin Dashboard</h1>
                     </div>
                     <div class="col-sm-6">
-                        <img src="/images/admin.png" style="width: 400px; height: 400px;" alt="Girl in a jacket">
+{{--                        <img src="/images/admin.png" style="width: 400px; height: 400px;" alt="Girl in a jacket">--}}
+                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_qp1q7mct.json"  background="transparent"  speed="0.5"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
                     </div>
                 </div>
 
