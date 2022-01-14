@@ -100,6 +100,7 @@ class WorkerController extends Controller
             'PhoneNumber' => $request->Phone,
             'Address' => $request->Address,
             'Category' => $request->Category,
+            'NearbyLocation' => $request->NearbyLocation,
             'URL' => $url,
 
 
@@ -160,6 +161,7 @@ class WorkerController extends Controller
                 'PhoneNumber' => $request->Phone,
                 'Address' => $request->Address,
                 'Category' => $request->Category,
+                'NearbyLocation'=>$request->NearbyLocation,
                 'URL' => $url,
 
             ];
@@ -171,6 +173,7 @@ class WorkerController extends Controller
                 'PhoneNumber' => $request->Phone,
                 'Address' => $request->Address,
                 'Category' => $request->Category,
+                'NearbyLocation'=>$request->NearbyLocation,
 
 
             ];

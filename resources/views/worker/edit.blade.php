@@ -169,6 +169,7 @@
         font-weight: 300;
     }
 </style>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 @extends('layouts.app')
 
 @section('content')
@@ -205,15 +206,16 @@
                                                     @method('PUT')
                                                     <fieldset>
                                                         <legend><span class="number">1</span> Worker Details</legend>
-                                                        <input type="text" name="Name" value="{{$editData['Name']}}" placeholder="Name *">
+                                                        <input type="text" name="Name" value="{{$editData['Name']}}" placeholder="Name *" required>
 
-                                                        <input type="text" name="Phone" value="{{$editData['PhoneNumber']}}" placeholder="Phone Number*">
-                                                        <input type="text" name="Address" value="{{$editData['Address']}}" placeholder="Address*">
-                                                        <input type="text" name="Category" value="{{$editData['Category']}}" placeholder="Category*">
+                                                        <input type="text" name="Phone" value="{{$editData['PhoneNumber']}}" placeholder="Phone Number*" required>
+                                                        <input type="text" name="Address" value="{{$editData['Address']}}" placeholder="Address*" required>
+                                                        <input type="text" name="Category" value="{{$editData['Category']}}" placeholder="Category*" required>
+                                                        <input type="text" name="NearbyLocation" value="{{$editData['NearbyLocation']}}" placeholder="Near By Location*" required>
                                                         <img src="{{$editData['URL']}}"
                                                         style="height: 48px; width: 50px;">
                                                         <input type="file" id="upload" value="{{$editData['URL']}}" class="inputfile" name="image"
-                                                               accept="image/*" style="display: none;">
+                                                               accept="image/*" style="display: none;" required>
                                                         <label for="upload" style="text-align: center;"> <i
                                                                 class="fa fa-camera icon" style="margin-right: 5px;"></i>Choose
                                                             image to update</label>
@@ -224,10 +226,16 @@
                                                 </form>
 
                                             </div>
+                                        </div>
+
 
                                 </div>
 
-                            </div>
+
+
+
+
+
                             </div>
                         </main>
                     </div>

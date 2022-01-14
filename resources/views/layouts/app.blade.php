@@ -56,7 +56,7 @@
 
         /* Current/active navbar link */
         .active {
-            background-color: #04AA6D;
+
             border-radius: 25px;
         }
         .styled-table {
@@ -261,7 +261,7 @@
 
         /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
         @media screen and (max-width: 500px) {
-             category {
+             .category {
                 float: none;
                 display: block;
             }
@@ -275,7 +275,8 @@
             <div class="container">
 
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="/images/NavLogo.png" style="width: 70px; height: 50px;" alt="App Logo">
+                    <img src="/images/NavLogo.png" style="width: 60px; height: 60px;" alt="App Logo">
+
 
                     {{ config('Mero Sewa') }}
                 </a>

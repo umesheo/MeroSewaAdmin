@@ -42,7 +42,7 @@
 
     .searchBox {
      position: absolute;
-        top: 33%;
+        top: auto;
         left: 50%;
         transform: translate(-50%,-50%);
         background: #2f3640;
@@ -85,7 +85,13 @@
 
     }
 
+
 </style>
+<script>
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    })
+</script>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 @extends('layouts.app')
 @section('content')
@@ -103,7 +109,7 @@
                         @endif
                         <main class="mx-0">
                             <div class="row">
-                                <div class="col-md-9">
+                                <div class="col-md-12">
 
                                     <div class="count" style="display: inline-block">
                                         <i class="fa fa-id-badge fa-2x" style="display: inline-block; margin-top: 1px;"></i>
@@ -113,26 +119,86 @@
                                     <div class="lotte" style="display: inline-block">
                                         <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9evakyqx.json"  background="transparent"  speed="1"  style="width: 200px; height: 70px;"  loop  autoplay></lottie-player>
                                     </div>
-                                    <div class="card-header bg-dark text-white" style="border-radius: 20px;">
+                                    <button type="button" style="float: right; border-radius: 10px 0 10px 0;  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        <div class="icon"><i class="fa fa-plus"
+                                                             style="display: inline-block;"></i></div>
+                                        Add Workers
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_2jbzmbru.json"  background="transparent"  speed="1"  style="width: 70px; height: 70px;"  loop  autoplay></lottie-player>
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add Workers</h5>
+
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="card-body">
+                                                        <div class="form-style-5">
+                                                            <form action="{{url('add-worker')}}" method="POST" id="createWorkerForm"
+                                                                  enctype='multipart/form-data'>
+                                                                @csrf
+                                                                <fieldset>
+                                                                    <legend><span class="number">1</span> Worker Details</legend>
+                                                                    <input type="text" name="Name" placeholder="Name *" required>
+
+                                                                    <input type="text" name="Phone" placeholder="Phone Number*" required>
+                                                                    <input type="text" name="Address" placeholder="Address*" required>
+                                                                    <input type="text" name="Category" placeholder="Category*" required>
+                                                                    <input type="text" name="NearbyLocation" placeholder="Near By Location*" required>
+
+                                                                    <input type="file" id="upload" class="inputfile" name="image"
+                                                                           accept="image/*" required>
+                                                                    <label for="upload" style="text-align: center;"> <i
+                                                                            class="fa fa-camera icon" style="margin-right: 5px;"></i>Choose
+                                                                        image</label>
+
+
+                                                                </fieldset>
+
+
+                                                                <input type="submit" value="Submit"/>
+                                                            </form>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-header bg-dark text-white" style="border-radius: 20px; display: flex; flex-wrap: nowrap;">
                                         <div class="logo">
+
                                             <div class="text">Mero Sewa:Workers List</div>
                                             <div class="icon"><i class="fa fa-users fa-2x"
                                                                  style="display: inline-block;"></i></div>
 
+
                                         </div>
+                                        <form class="form-group" id="search"  autocomplete="off">
+                                            <div class="searchBox"  >
+                                                <input type="search"  name="search" id="" class="searchButton" value="{{$search}}" placeholder="Search for Name or Number">
+
+                                                <a class="search-btn" onclick="document.getElementById('search').submit();">
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                        </form>
+
 
 
                                     </div>
-                                    <form class="form-group" id="search" style="margin-bottom: 70px;" autocomplete="off">
-                                        <div class="searchBox">
-                                        <input type="search"  name="search" id="" class="searchButton" value="{{$search}}" placeholder="Search for name,number">
 
-                                        <a class="search-btn" onclick="document.getElementById('search').submit();">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </a>
-                                        </div>
-                                    </form>
-                                    <table class="styled-table" id="workertable">
+                                    <table class="styled-table" id="workertable" style="margin-top: auto">
                                         <thead>
                                         <tr>
 
@@ -186,48 +252,7 @@ background-image: linear-gradient(315deg, #fc9842 0%, #fe5f75 74%);border-radius
 
                                 </div>
 
-                                <div class="col-md-3">
 
-
-                                    <div class="card-header bg-dark text-white" style="border-radius: 20px;">
-                                        <div class="logo">
-                                            <div class="text">Add Workers</div>
-                                            <div class="icon"><i class="fa fa-user-plus fa-2x"
-                                                                 style="display: inline-block;"></i></div>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="form-style-5">
-                                            <form action="{{url('add-worker')}}" method="POST" id="createWorkerForm"
-                                                  enctype='multipart/form-data'>
-                                                @csrf
-                                                <fieldset>
-                                                    <legend><span class="number">1</span> Worker Details</legend>
-                                                    <input type="text" name="Name" placeholder="Name *">
-
-                                                    <input type="text" name="Phone" placeholder="Phone Number*">
-                                                    <input type="text" name="Address" placeholder="Address*">
-                                                    <input type="text" name="Category" placeholder="Category*">
-
-                                                    <input type="file" id="upload" class="inputfile" name="image"
-                                                           accept="image/*">
-                                                    <label for="upload" style="text-align: center;"> <i
-                                                            class="fa fa-camera icon" style="margin-right: 5px;"></i>Choose
-                                                        image</label>
-
-
-                                                </fieldset>
-
-
-                                                <input type="submit" value="Submit"/>
-                                            </form>
-
-                                        </div>
-                                    </div>
-
-                                </div>
                             </div>
                         </main>
                     </div>
