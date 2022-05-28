@@ -12,6 +12,8 @@ use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
+
+
 class WorkerController extends Controller
 {
     public function __construct(Database $database, Auth $auth)
@@ -36,6 +38,7 @@ class WorkerController extends Controller
 
 
     }
+
 
     public function index(Request $request)
     {
@@ -75,15 +78,17 @@ class WorkerController extends Controller
     {
         $url = "";
         if ($request->file('image')) {
+            $firebasestoragepath = "WorkersImage/";
             $storage = app('firebase.storage');
 
             $defaultBucket = $storage->getBucket();
+
 //
             $file = $request->file('image');
 
 
             $uploadOptions = array_filter([
-                'name' => $file->getClientOriginalName(),
+                'name' => $firebasestoragepath.$file->getClientOriginalName(),
                 'predefinedAcl' => 'publicRead',
             ]);
 
@@ -134,6 +139,7 @@ class WorkerController extends Controller
     {
         $url = "";
         if ($request->file('image')) {
+            $firebasestoragepath = "WorkersImage/";
             $storage = app('firebase.storage');
 
             $defaultBucket = $storage->getBucket();
@@ -142,7 +148,7 @@ class WorkerController extends Controller
 
 
             $uploadOptions = array_filter([
-                'name' => $file->getClientOriginalName(),
+                'name' => $firebasestoragepath.$file->getClientOriginalName(),
                 'predefinedAcl' => 'publicRead',
             ]);
 
@@ -157,7 +163,6 @@ class WorkerController extends Controller
         if ($request->file('image')){
             $updateData = [
                 'Name' => $request->Name,
-                'Email' => $request->Email,
                 'PhoneNumber' => $request->Phone,
                 'Address' => $request->Address,
                 'Category' => $request->Category,
@@ -169,7 +174,6 @@ class WorkerController extends Controller
         else{
             $updateData = [
                 'Name' => $request->Name,
-                'Email' => $request->Email,
                 'PhoneNumber' => $request->Phone,
                 'Address' => $request->Address,
                 'Category' => $request->Category,

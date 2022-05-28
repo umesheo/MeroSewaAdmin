@@ -13,7 +13,10 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
-        "mckenziearts/laravel-notify": "^2.2"
+        "mckenziearts/laravel-notify": "^2.2",
+        "renoki-co/laravel-firebase-analytics": "^1.2",
+        "spatie/image-optimizer": "^1.6",
+        "spatie/laravel-medialibrary": "^9.11"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

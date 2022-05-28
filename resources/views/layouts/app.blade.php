@@ -285,6 +285,7 @@
                     <a class="category"  href="{{ url('worker') }}"><i class="fa fa-briefcase"></i> Workers</a>
                     <a class="category" href="{{url('user')}}"><i class="fa fa-fw fa-user"></i>App Users</a>
 
+
                 @endif
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

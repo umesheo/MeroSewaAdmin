@@ -215,7 +215,7 @@
                                                         <img src="{{$editData['URL']}}"
                                                         style="height: 48px; width: 50px;">
                                                         <input type="file" id="upload" value="{{$editData['URL']}}" class="inputfile" name="image"
-                                                               accept="image/*" style="display: none;" required>
+                                                               accept="image/*" style="" >
                                                         <label for="upload" style="text-align: center;"> <i
                                                                 class="fa fa-camera icon" style="margin-right: 5px;"></i>Choose
                                                             image to update</label>

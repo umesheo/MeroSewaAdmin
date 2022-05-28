@@ -30,6 +30,7 @@
 
 @section('content')
 
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
@@ -97,6 +98,11 @@
                                         <h4>{{$count}}</h4>
                                         <p>Total Users</p>
                                     </div>
+
+
+
+
+
 {{--                                    <img src="/images/AppUser.png" style="width: 700px; height: 400px;"--}}
 {{--                                         alt="Girl in a jacket">--}}
                                     <lottie-player src="https://assets3.lottiefiles.com/private_files/lf30_lmwiE8.json"  background="transparent"  speed="1"  style="width: 500px; height: 400px;"  loop  autoplay></lottie-player>
