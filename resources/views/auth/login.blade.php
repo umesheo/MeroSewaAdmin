@@ -57,7 +57,7 @@
 
                     <div class="col-sm-6">
 {{--                        <img src="/images/LoginArt.png" style="width: 90%; height: 270px;" alt="Girl in a jacket">--}}
-                        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_rw0hvilj.json"  background="transparent"  speed="1"  style=" margin-left:40px;width: 290px; height: 280px;"  loop  autoplay></lottie-player>
+                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_hzgq1iov.json"  background="transparent"  speed="1"  style=" margin-left:40px;width: 290px; height: 280px;"  loop  autoplay></lottie-player>
                     </div>
                     </div>
                     <form method="POST" action="{{ route('login') }}">
